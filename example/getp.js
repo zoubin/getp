@@ -21,6 +21,7 @@ var o = {
       },
     },
   },
+  'a.b': 1,
 };
 
 console.table([
@@ -63,6 +64,16 @@ console.table([
     expr: "getp(o, 'x', ['y', 'z'], 'u.v')",
     value: getp(o, 'x', ['y', 'z'], 'u.v'),
     o: 'o.x.y.z.u.v = 1',
+  },
+  {
+    expr: "getp(o, 'a.b')",
+    value: getp(o, 'a.b'),
+    o: 'o["a.b"] = 1',
+  },
+  {
+    expr: "getp(o, 'a.b', false)",
+    value: getp(o, 'a.b', false),
+    o: 'o["a.b"] = 1',
   },
 ]);
 

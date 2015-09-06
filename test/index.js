@@ -13,6 +13,7 @@ var o = {
       },
     },
   },
+  'a.b': 1,
 };
 
 test('normal', function(t) {
@@ -70,6 +71,18 @@ test('array', function(t) {
     undefined
   );
 
+  t.equal(
+    getp(o, 'a.b'),
+    undefined,
+    'dots in string should be parsed'
+  );
+
+  t.equal(
+    getp(o, 'a.b', false),
+    1,
+    'dots in array should not be parsed'
+  );
+
   t.end();
 });
 
@@ -118,4 +131,5 @@ test('mixed', function(t) {
   );
   t.end();
 });
+
 

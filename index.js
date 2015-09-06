@@ -4,9 +4,15 @@ module.exports = function (o) {
   var names = Array.prototype.concat.apply(
     [], Array.prototype.slice.call(arguments, 1)
   );
+  var parseDots = true;
+  var len = names.length;
+  if (typeof names[len - 1] === 'boolean') {
+    parseDots = names[len - 1] !== false;
+    len = len - 1;
+  }
   var chain = [];
-  for (var i = 0, len = names.length; i < len; ++i) {
-    chain.push.apply(chain, names[i].split('.'));
+  for (var i = 0; i < len; ++i) {
+    chain.push.apply(chain, parseDots ? names[i].split('.') : [names[i]]);
   }
   if (!chain.length) {
     return o;
