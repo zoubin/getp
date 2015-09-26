@@ -12,7 +12,12 @@ module.exports = function (o) {
   }
   var chain = [];
   for (var i = 0; i < len; ++i) {
-    chain.push.apply(chain, parseDots ? names[i].split('.') : [names[i]]);
+    chain.push.apply(
+      chain,
+      parseDots && typeof names[i] === 'string'
+        ? names[i].split('.')
+        : [names[i]]
+    );
   }
   if (!chain.length) {
     return o;

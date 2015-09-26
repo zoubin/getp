@@ -132,4 +132,12 @@ test('mixed', function(t) {
   t.end();
 });
 
+test('numeric input', function(t) {
+  t.equal(
+    getp({ x: [1, 2, 3] }, 'x', 1),
+    2
+  );
+  t.end();
+});
+
 

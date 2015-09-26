@@ -34,7 +34,7 @@ The host object of the property being accessed.
 
 #### name
 
-Type: `String`, `Array`
+Type: `String`, `Number`, `Array`
 
 If `Array`, it is expanded as an array of strings.
 
