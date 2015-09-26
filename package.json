@@ -1,6 +1,6 @@
 {
   "name": "getp",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Get nested properties",
   "main": "index.js",
   "directories": {
