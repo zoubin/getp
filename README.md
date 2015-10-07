@@ -49,3 +49,19 @@ Default: `true`
 If `false`, name strings will be treated literaly.
 
 
+### set(o, ...names, v)
+
+```javascript
+var set = require('getp/set')
+var o = {}
+set(o, 'x', 'y', 1)
+console.log(o)
+// { x: { y: 1 } }
+
+var o = {}
+set(o, ['x', 'y'], 1)
+console.log(o)
+// { x: { y: 1 } }
+
+```
+

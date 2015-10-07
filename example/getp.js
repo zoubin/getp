@@ -1,9 +1,9 @@
-require('console.table');
-var _getp = require('..');
+require('console.table')
+var _getp = require('..')
 
 function getp() {
-  var v = _getp.apply(null, arguments);
-  return v === undefined ? 'undefined' : v;
+  var v = _getp.apply(null, arguments)
+  return v === undefined ? 'undefined' : v
 }
 
 var o = {
@@ -22,7 +22,7 @@ var o = {
     },
   },
   'a.b': 1,
-};
+}
 
 console.table([
   {
@@ -75,5 +75,5 @@ console.table([
     value: getp(o, 'a.b', false),
     o: 'o["a.b"] = 1',
   },
-]);
+])
 
